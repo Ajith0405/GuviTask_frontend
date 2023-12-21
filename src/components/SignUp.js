@@ -29,6 +29,8 @@ const SignUp = () => {
 
     const [pswdErr, setPswdErr] = useState("");
     const [pswdErrClr, setPswdErrClr] = useState("");
+    axios.default.withCredentials = true;
+    
     useEffect(() => {
         if (password && conPassword) {
             if (password === conPassword) {
@@ -55,7 +57,7 @@ const SignUp = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/register', { name, email, password })
+        axios.post('https://guvi-task-backend-api.vercel.app/register', { name, email, password })
             .then(result => {
                 console.log(result)
                 alert("Registered Successfully..")
