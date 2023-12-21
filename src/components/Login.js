@@ -13,7 +13,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [passShowHide, setpassShowHide] = useState(true);
-
+    axios.default.withCredentials = true;
 
 
     const handlePassHideShow = () => {
@@ -22,7 +22,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/login', { email, password })
+        axios.post('https://guvi-task-backend-api.vercel.app/login', { email, password })
             .then(result => {
                 console.log(result)
                 if (result.data._id) {
