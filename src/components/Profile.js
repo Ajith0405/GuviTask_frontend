@@ -21,12 +21,12 @@ const Profile = () => {
   const [dob, setDob] = useState("");
   const [mobile, setMobile] = useState();
   const [highEdu, setHighEdu] = useState();
-  
+  axios.default.withCredentials = true;
   const [formDisable, setFormDisable] = useState(true);
 
   useEffect(() => {
     console.log(id);
-    axios.get('http://localhost:3001/getUser/' + id, {})
+    axios.get('https://guvi-task-backend-api.vercel.app/getUser/' + id, {})
       .then(res => {
         console.log(res);
         setName(res.data.name);
@@ -50,7 +50,7 @@ const Profile = () => {
   }
   const handleSave = (e) => {
     e.preventDefault();
-    axios.put('http://localhost:3001/updateUser/'+id,{age,dob,gender,mobile,highEdu})
+    axios.put('https://guvi-task-backend-api.vercel.app/updateUser/'+id,{age,dob,gender,mobile,highEdu})
     .then(res=>{
         console.log(res)
         alert("Updated Successfully..")
