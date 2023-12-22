@@ -71,7 +71,7 @@ const SignUp = () => {
         <div>
             <NavBar />
             <div className='row container mx-auto'>
-                <div className='col-6 col-lg-6 col-md-6 col-sm-6'>
+                <div className='col-6 col-lg-6 col-md-6 col-sm-12'>
                     <div className='mt-4' style={{ height: '85vh', backgroundColor: 'lightgreen' }}>
                         <div className='pt-2'>
                             <h1 className='text-center' style={{fontSize:'48px',fontWeight:'600',color:'black'}}>Register Now!</h1>
@@ -83,7 +83,7 @@ const SignUp = () => {
                        
                     </div>
                 </div>
-                <div className='col-6 col-lg-6 col-md-6 col-sm-6'>
+                <div className='col-6 col-lg-6 col-md-6 col-sm-12'>
                     <div className='card p-3 mt-5 my-auto w-75 mx-auto' style={{ minWidth: "400px" }}>
                         <h2 className="text-center">Register</h2>
                         <form onSubmit={handleSubmit}>
