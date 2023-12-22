@@ -22,7 +22,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://guvi-task-backend-api.vercel.app/login', { email, password })
+        axios.post('https://mernappbackend-thsp.onrender.com/login', { email, password })
             .then(result => {
                 console.log(result)
                 if (result.data._id) {
