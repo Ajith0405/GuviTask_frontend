@@ -4,6 +4,7 @@ import axios from 'axios'
 import './signup.css'
 import { useNavigate } from 'react-router-dom'
 import NavBar from './NavBar'
+import signupImg from '../assets/images/siginup.png'
 
 const SignUp = () => {
 
@@ -29,8 +30,6 @@ const SignUp = () => {
 
     const [pswdErr, setPswdErr] = useState("");
     const [pswdErrClr, setPswdErrClr] = useState("");
-    axios.default.withCredentials = true;
-    
     useEffect(() => {
         if (password && conPassword) {
             if (password === conPassword) {
@@ -57,7 +56,7 @@ const SignUp = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('https://guvi-task-backend-api.vercel.app/register', { name, email, password })
+        axios.post('http://localhost:3001/register', { name, email, password })
             .then(result => {
                 console.log(result)
                 alert("Registered Successfully..")
@@ -79,7 +78,7 @@ const SignUp = () => {
                             <h2 className='text-center' style={{fontSize:'38px'}}>Join us and unlock a world of possibilities. </h2>
                         </div>
                         <div className='text-center'>
-                         <img src='https://www.guvi.in/web-build/images/signup-banner.5254a64a3857c50f02854154805a864d.png' width={'500px'} alt='register'/>
+                         <img src={signupImg} width={'500px'} alt='register'/>
                         </div>
                        
                     </div>
